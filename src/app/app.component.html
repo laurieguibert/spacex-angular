@@ -1,0 +1,18 @@
+<mat-drawer-container class="container" autosize>
+  <mat-toolbar color="primary">
+    <button type="button" mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-drawer class="sidenav" #drawer mode="push">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let item of menuItems" routerLink={{item.path}} routerLinkActivate="active">
+        <div matLine>{{item.name}}</div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-drawer>
+  <div class="sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

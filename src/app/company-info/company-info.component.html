@@ -1,0 +1,22 @@
+<mat-card class="company-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{companyInfo.name}}</mat-card-title>
+    <mat-card-subtitle>{{companyInfo.founded}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{companyInfo.summary}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>
+      <mat-icon>thumb_up</mat-icon>
+      LIKE
+    </button>
+    <button mat-raised-button color="primary">
+      <mat-icon>share</mat-icon>
+      SHARE
+    </button>
+  </mat-card-actions>
+</mat-card>
