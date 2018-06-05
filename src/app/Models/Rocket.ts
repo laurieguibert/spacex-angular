@@ -44,7 +44,7 @@ interface Rocket {
     fuel_amount_tons?: number;
     burn_time_sec: number;
     thrust: Thrustsealevel;
-    payloads: Payloads;
+    payloads: Payload[];
   }
   
   interface Payloads {
@@ -61,16 +61,6 @@ interface Rocket {
   interface Height2 {
     meters?: number;
     feet?: number;
-  }
-  
-  interface Firststage {
-    reusable: boolean;
-    engines: number;
-    fuel_amount_tons: number;
-    burn_time_sec: number;
-    thrust_sea_level: Thrustsealevel;
-    thrust_vacuum: Thrustsealevel;
-    cores?: number;
   }
   
   interface Thrustsealevel {

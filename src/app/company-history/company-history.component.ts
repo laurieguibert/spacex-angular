@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SpacexApiService } from 'src/app/Services/spacex-api.service';
+import { SpacexApiService } from 'src/app/services/spacex-api.service';
 
 @Component({
   selector: 'app-company-history',

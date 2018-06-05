@@ -11,7 +11,7 @@
     "precommit-check": "echo \"start lint\" && npm run lint   && exit 0"
   },
   "pre-commit": [
-    "precommit-check" ,
+    "precommit-check",
     "e2e"
   ],
   "private": true,
