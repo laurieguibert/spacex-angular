@@ -7,8 +7,13 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "precommit-check": "echo \"start lint\" && npm run lint   && exit 0"
   },
+  "pre-commit": [
+    "precommit-check",
+    "e2e"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.3",
@@ -24,6 +29,7 @@
     "@angular/router": "^6.0.3",
     "angular-bootstrap-md": "^6.1.2",
     "core-js": "^2.5.4",
+    "pre-commit": "^1.2.2",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
