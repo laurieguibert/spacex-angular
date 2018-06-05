@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "precommit-check": "echo \"start lint\" && npm run lint   && exit 0",
+    "precommit-check": "echo \"start lint\" && npm run lint   && exit 0"
   },
   "pre-commit": [
     "precommit-check" ,

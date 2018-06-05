@@ -4,7 +4,6 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -20,7 +19,6 @@ import { HomeComponent } from './pages/home/home.component';
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    HttpModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ],
