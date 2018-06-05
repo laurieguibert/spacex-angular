@@ -17,7 +17,7 @@ export class MissionsComponent implements OnInit {
   }*/
 
   constructor(private spacexApi: SpacexApiService) {
-    this.spacexApi.getMissions<Launch>(LaunchEndpoints.All, {id: true, order: 'desc'}).subscribe(data => {
+    this.spacexApi.getAllLaunches().subscribe(data => {
       this.launches = data;
     });
   }

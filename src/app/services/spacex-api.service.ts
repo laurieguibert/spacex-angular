@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError} from 'rxjs/operators';
-import { LaunchEndpoints } from 'src/app/Services/LaunchEndpoint';
+import { LaunchEndpoints } from 'src/app/services/LaunchEndpoint';
 
 @Injectable({
   providedIn: 'root'
@@ -28,29 +28,15 @@ export class SpacexApiService {
     );
   }
 
-  /*getLaunches(): Observable<Launch[]> {
-    const endpoint = `${this.baseUrl}/launches/all`;
-    return this.httpClient.get<Launch[]>(endpoint)
-    .pipe(
-      catchError(this.handleError)
-    );
-  } */
-
-  getAllLaunches(params: any = null): Observable<Launch[]> {
-    const endpoint = `${this.baseUrl}/launches/all`;
-    let httpParams = new HttpParams();
-    Object.keys(params).forEach(function(key) {
-      httpParams = httpParams.append(key, params[key]);
-    });
-
-    return this.httpClient.get<Launch[]>(endpoint, {params: httpParams})
-    .pipe(
-      catchError(this.handleError)
-    );
+  getAllLaunches(): Observable<Launch[]> {
+    return this.GetMissions<Launch[]>(LaunchEndpoints.All);
   }
 
-  getMissions<T>(path: LaunchEndpoints, params: any = null): Observable<T> {
-    const endpoint = `${this.baseUrl}/launches/${LaunchEndpoints[path]}`;
+  private GetMissions<T>(path: LaunchEndpoints = null, params: any = null): Observable<T> {
+    let endpoint = `${this.baseUrl}/launches`;
+    if(path !== null){
+      endpoint = `${this.baseUrl}/launches/${LaunchEndpoints[path]}`;
+    }
     let httpParams = new HttpParams();
     Object.keys(params).forEach(function(key) {
       httpParams = httpParams.append(key, params[key]);
@@ -63,21 +49,20 @@ export class SpacexApiService {
   }
 
   getAllRockets(): Observable<Rocket[]> {
-    const endpoint = `${this.baseUrl}/rockets`;
-    return this.httpClient.get<Rocket[]>(endpoint)
-    .pipe(
-      catchError(this.handleError)
-    );
+    return this.GetRockets<Rocket[]>();
   }
 
-  getRocket(params: any = null): Observable<Rocket> {
-    const endpoint = `${this.baseUrl}/rockets/${name}`;
-    let httpParams = new HttpParams();
-    Object.keys(params).forEach(function(key) {
-      httpParams = httpParams.append(key, params[key]);
-    });
+  getRocket(rocketId : string) : Observable<Rocket> {
+    return this.GetRockets<Rocket>(rocketId);
+  }
 
-    return this.httpClient.get<Rocket>(endpoint, {params: httpParams})
+  private GetRockets<T>(rocketId : string = null) : Observable<T>{
+    let endpoint = `${this.baseUrl}/rockets`;
+    if(rocketId !== null){
+      endpoint = `${this.baseUrl}/rockets/${rocketId}`;
+    }
+
+    return this.httpClient.get<T>(endpoint)
     .pipe(
       catchError(this.handleError)
     );
