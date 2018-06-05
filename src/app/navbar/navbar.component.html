@@ -1,1 +1,9 @@
+<ul class="navbar-nav">
+  <li *ngFor="let link of links" class="nav-item">
+    <a class="nav-link waves-light" mdbWavesEffect routerLink = "{{link.href}}">
+      {{link.name}}
+      <span class="sr-only"></span>
+    </a>
+  </li>
+</ul>
 

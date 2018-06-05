@@ -1,13 +1,14 @@
 <header id="header">
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          <img alt="SpaceX Logo" src="http://www.spacex.com/sites/all/themes/spacex2012/logo.png">
-        </a>
-        <app-nav></app-nav>
-      </div>
-    </div>
-  </nav>
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top">
+    <logo>
+      <a class="navbar-brand" routerLink="/">
+        <img alt="SpaceX Logo" src="http://www.spacex.com/sites/all/themes/spacex2012/logo.png">
+      </a>
+    </logo>
+    <links>
+      <app-nav [links]="links"></app-nav>
+    </links>
+  </mdb-navbar>
+  <router-outlet></router-outlet>
 </header>
 
