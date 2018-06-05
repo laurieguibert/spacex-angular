@@ -4,6 +4,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -29,6 +30,7 @@ import { RocketComponent } from './rocket/rocket.component';
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    AngularFontAwesomeModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ],

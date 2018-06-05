@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError} from 'rxjs/operators';
-import { LaunchEndpoints } from 'src/app/Services/LaunchEndpoint';
+import { LaunchEndpoints } from 'src/app/services/LaunchEndpoint';
 
 @Injectable({
   providedIn: 'root'
