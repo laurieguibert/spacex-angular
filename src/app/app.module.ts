@@ -1,32 +1,30 @@
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
-import { MaterialModule } from './material/material.module';
-import { MissionsComponent } from './missions/missions.component';
-import { AppRoutingModule } from './app-routing/app-routing.module';
-import { CompanyInfoComponent } from './company-info/company-info.component';
-import { LaunchComponent } from './launch/launch.component';
-import { HttpClient } from 'selenium-webdriver/http';
+import { AppRoutingModule } from './routing/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MissionsComponent,
-    CompanyInfoComponent,
-    LaunchComponent
+    NavbarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
+    MDBBootstrapModule.forRoot(),
     AppRoutingModule,
-    MaterialModule
+    HttpClientModule,
+    HttpModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
+
 export class AppModule { }
