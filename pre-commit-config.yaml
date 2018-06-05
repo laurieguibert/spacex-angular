@@ -7,8 +7,8 @@
     -   id: check-added-large-files
         args:
         - --maxkb=2000
- -   repo: git://github.com/awebdeveloper/pre-commit-tslint/
-     sha: ''  # Use the sha or tag you want to point at
-     hooks:
-     -   id: tslint
-         additional_dependencies: ['tslint@5.0.0']
+-   repo: git://github.com/awebdeveloper/pre-commit-tslint/
+    sha: ''  # Use the sha or tag you want to point at
+    hooks:
+    -   id: tslint
+        additional_dependencies: ['tslint@5.0.0']
