@@ -1,1 +1,18 @@
+<div *ngFor="let l of launch">
+<p>Last mission name : {{l.mission_name}}</p>
+<p>Details : {{l.details}}</p>
+<p>Date de lancement : {{l.launch_date_utc | date:'dd-MM-yyyy'}}</p>
+<p>Rocket : {{l.rocket.rocket_name}}</p>
+<div *ngFor="let p of l.rocket.second_stage.payloads">
+    <p>Payload {{p.payload_id}} infos :</p>
+    <p>Payload type : {{p.payload_type}}</p>
+    <p>Payload mass : {{p.payload_mass_kg}} kg</p>
+</div>
+<p>Links : </p>
+<p>Mission path : {{l.links.mission_patch}}</p>
+<p>Article link : {{l.links.article_link}}</p>
+<p>Wikipedia : {{l.links.wikipedia}}</p>
+<p>Video : {{l.links.video_link}}</p>
+</div>
+
 {{launch|json}}
