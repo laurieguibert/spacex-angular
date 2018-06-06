@@ -7,14 +7,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { HomeComponent } from './pages/home/home.component';
+import { RocketComponent } from './pages/rocket/rocket.component';
+
 import { MissionsComponent } from './missions/missions.component';
 import { LaunchComponent } from './launch/launch.component';
 import { CompanyInfoComponent } from './company-info/company-info.component';
 import { CompanyHistoryComponent } from './company-history/company-history.component';
-import { RocketComponent } from './rocket/rocket.component';
+
 import { CapsuleComponent } from './capsule/capsule.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { RocketListComponent } from './pages/rocket-list/rocket-list.component';
+import { RocketListComponent } from './rocket-list/rocket-list.component';
 
 @NgModule({
   declarations: [

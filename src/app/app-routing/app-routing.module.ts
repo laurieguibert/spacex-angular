@@ -4,9 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { MissionsComponent } from '../missions/missions.component';
 import { CompanyInfoComponent } from '../company-info/company-info.component';
 import { CompanyHistoryComponent } from 'src/app/company-history/company-history.component';
-import { RocketComponent } from 'src/app/rocket/rocket.component';
+import { RocketComponent } from '../pages/rocket/rocket.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
-import { RocketListComponent } from '../pages/rocket-list/rocket-list.component';
+import { RocketListComponent } from '../rocket-list/rocket-list.component';
 
 const appRoutes: Routes = [
   { path: 'missions', component: MissionsComponent },

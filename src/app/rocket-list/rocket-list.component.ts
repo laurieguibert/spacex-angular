@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SpacexApiService } from 'src/app/Services/spacex-api.service';
+import { SpacexApiService } from '../Services/spacex-api.service';
 import { Router } from '@angular/router';
 
 @Component({

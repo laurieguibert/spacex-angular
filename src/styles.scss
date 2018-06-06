@@ -10,4 +10,27 @@ body {
   }
 }
 
+#rocket-navigation {
+  position: relative;
+  .navbar-nav {
+    li {
+      a {
+        background-color: #21272b;
+        color: #ccc;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 8px 0 !important;
+        &:hover {
+          border-color: rgba(255, 255, 255, .5) !important;
+        }
+      }
+    }
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 25px;
+  }
+}
+
 
