@@ -14,7 +14,7 @@ import { CompanyHistoryComponent } from './company-history/company-history.compo
 import { RocketComponent } from './rocket/rocket.component';
 import { CapsuleComponent } from './capsule/capsule.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { RocketListComponent } from './rocket-list/rocket-list.component';
+import { RocketListComponent } from './pages/rocket-list/rocket-list.component';
 
 @NgModule({
   declarations: [

@@ -6,7 +6,7 @@ import { CompanyInfoComponent } from '../company-info/company-info.component';
 import { CompanyHistoryComponent } from 'src/app/company-history/company-history.component';
 import { RocketComponent } from 'src/app/rocket/rocket.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
-import { RocketListComponent } from 'src/app/rocket-list/rocket-list.component';
+import { RocketListComponent } from '../pages/rocket-list/rocket-list.component';
 
 const appRoutes: Routes = [
   { path: 'missions', component: MissionsComponent },

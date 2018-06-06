@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './rocket-list.component.html',
   styleUrls: ['./rocket-list.component.scss']
 })
+
 export class RocketListComponent implements OnInit {
   rockets: Rocket[];
   constructor(private spacexApi: SpacexApiService,

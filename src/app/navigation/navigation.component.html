@@ -1,9 +1,14 @@
 <ul class="navbar-nav">
-  <li *ngFor="let link of links" class="nav-item">
-    <a class="nav-link waves-light" mdbWavesEffect routerLink = "{{link.href}}">
+  <li *ngFor="let link of links;"
+      (click)="link.action"
+      class="nav-item"
+  >
+    <a class="nav-link"
+       routerLink = "{{link.href}}"
+       (click)="activeLink(link)"
+       [ngClass]="{'active' : link.isActive}"
+    >
       {{link.name}}
-      <span class="sr-only"></span>
     </a>
   </li>
 </ul>
-

@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-rocket',
   templateUrl: './rocket.component.html',
-  styleUrls: ['./rocket.component.css']
+  styleUrls: ['./rocket.component.scss']
 })
 export class RocketComponent implements OnInit {
   @Input() rocket: Rocket;
