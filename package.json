@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
+    "e2e": "ng e2e -e mock --webdriver-update false --progres false --watch false",
     "precommit-check": "echo \"start lint\" && npm run lint   && exit 0"
   },
   "pre-commit": [
