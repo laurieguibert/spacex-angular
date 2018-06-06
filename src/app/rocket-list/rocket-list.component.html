@@ -1,0 +1,5 @@
+<div *ngFor="let r of rockets">
+  <app-rocket [rocket]="r"></app-rocket>
+  <button class="btn btn-primary" (click)="goToRocketDetails(r.id)">details</button>
+  
+</div>

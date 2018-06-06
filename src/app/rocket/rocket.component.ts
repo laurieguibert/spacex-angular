@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 import { SpacexApiService } from 'src/app/Services/spacex-api.service';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rocket',
@@ -7,13 +9,13 @@ import { SpacexApiService } from 'src/app/Services/spacex-api.service';
   styleUrls: ['./rocket.component.css']
 })
 export class RocketComponent implements OnInit {
-  rockets: Rocket[];
-  rocket: Rocket;
+  @Input() rocket: Rocket;
 
-  constructor(private spacexApi: SpacexApiService) {
-    this.spacexApi.getAllRockets().subscribe((data: Rocket[]) => {
-      this.rockets = data;
-    });
+  constructor(private spacexApi: SpacexApiService, 
+    private route: ActivatedRoute,
+    private router: Router ) {
+    const rocketId = this.route.snapshot.params.rocket_id;
+    this.loadDetailsRocket(rocketId);
   }
 
   ngOnInit() {
