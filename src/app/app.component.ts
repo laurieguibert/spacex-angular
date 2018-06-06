@@ -10,23 +10,33 @@ export class AppComponent {
   links = [
     {
       name: 'Falcon 9',
-      href: '/#!/'
+      href: 'rockets/falcon9',
+      action: 'goToRocketDetails(falcon9)',
+      isActive: false
     },
     {
       name: 'Falcon Heavy',
-      href: '/#!/'
+      href: 'rockets/falconheavy',
+      action: 'goToRocketDetails(falconheavy)',
+      isActive: false
     },
     {
       name: 'Dragon',
-        href: '/#!/'
+      href: 'home',
+      action: 'goToRocketDetails(1)',
+      isActive: false
     },
     {
       name: 'Updates',
-        href: '/#!/'
+      href: 'home',
+      action: 'goToRocketDetails(1)',
+      isActive: false
     },
     {
       name: 'About SpaceX',
-        href: '/#!/'
+      href: 'home',
+      action: 'goToRocketDetails(1)',
+      isActive: false
     }
   ];
 }

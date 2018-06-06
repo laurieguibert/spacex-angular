@@ -6,12 +6,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-rocket',
   templateUrl: './rocket.component.html',
-  styleUrls: ['./rocket.component.css']
+  styleUrls: ['./rocket.component.scss']
 })
 export class RocketComponent implements OnInit {
   @Input() rocket: Rocket;
 
-  constructor(private spacexApi: SpacexApiService, 
+  constructor(private spacexApi: SpacexApiService,
     private route: ActivatedRoute,
     private router: Router ) {
     const rocketId = this.route.snapshot.params.rocket_id;

@@ -14,4 +14,10 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
+  activeLink(link) {
+    this.links.forEach(item => {
+      item.isActive = false;
+    });
+    link.isActive = !link.isActive;
+  }
 }
