@@ -7,11 +7,11 @@ import { SpacexApiService } from 'src/app/Services/spacex-api.service';
   styleUrls: ['./capsule.component.scss']
 })
 export class CapsuleComponent implements OnInit {
-  capsules : Capsule[];
-  capsule : Capsule;
+  capsules: Capsule[];
+  capsule: Capsule;
 
   constructor(private spacexApi: SpacexApiService) {
-    this.spacexApi.getAllCapsules().subscribe((data : Capsule[]) => {
+    this.spacexApi.getAllCapsules().subscribe((data: Capsule[]) => {
       this.capsules = data;
     });
   }
@@ -19,8 +19,8 @@ export class CapsuleComponent implements OnInit {
   ngOnInit() {
   }
 
-  loadDetailsCapsule(capsuleId : string){
-    this.spacexApi.getCapsule(capsuleId).subscribe((data : Capsule) => {
+  loadDetailsCapsule(capsuleId: string) {
+    this.spacexApi.getCapsule(capsuleId).subscribe((data: Capsule) => {
       this.capsule = data;
     });
   }
