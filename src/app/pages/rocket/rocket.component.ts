@@ -11,24 +11,24 @@ import { Router } from '@angular/router';
 export class RocketComponent implements OnInit {
   @Input() rocket: Rocket;
 
-  links = [
+  items = [
     {
-      name: 'Falcon 9 pricing',
-      href: '',
-      action: '',
-      isActive: false
+      thumbnail: 'https://image.ibb.co/krOwno/falcon9_thumb_droneship.jpg',
+      title: 'droneship landing',
+      created_at: 'April 8, 2016',
+      description: 'First successful landing of Falcon 9 first stage on droneship.'
     },
     {
-      name: 'launch manifest',
-      href: '',
-      action: '',
-      isActive: false
+      thumbnail: 'https://image.ibb.co/hhZmno/dragon_thumb.jpg',
+      title: 'space station resupply',
+      created_at: 'April 8, 2016',
+      description: 'Dragon returns to the Space Station, delivering supplies for the crew.'
     },
     {
-      name: 'Falcon 9 user\'s guide',
-      href: '',
-      action: '',
-      isActive: false
+      thumbnail: 'https://image.ibb.co/f4oJ08/falcon9_thumb_lz1.jpg',
+      title: 'the falcon has landed',
+      created_at: 'December 21, 2015',
+      description: 'First successful landing of Falcon 9 first stage on land.'
     },
   ];
 

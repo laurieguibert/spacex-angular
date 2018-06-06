@@ -17,6 +17,7 @@ import { CompanyHistoryComponent } from './company-history/company-history.compo
 import { CapsuleComponent } from './capsule/capsule.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RocketListComponent } from './rocket-list/rocket-list.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RocketListComponent } from './rocket-list/rocket-list.component';
     RocketComponent,
     CapsuleComponent,
     NavigationComponent,
-    RocketListComponent
+    RocketListComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
