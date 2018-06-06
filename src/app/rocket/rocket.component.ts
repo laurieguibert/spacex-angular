@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class RocketComponent implements OnInit {
   @Input() rocket: Rocket;
 
-  constructor(private spacexApi: SpacexApiService, 
+  constructor(private spacexApi: SpacexApiService,
     private route: ActivatedRoute,
     private router: Router ) {
     const rocketId = this.route.snapshot.params.rocket_id;

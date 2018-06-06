@@ -8,17 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./rocket-list.component.scss']
 })
 export class RocketListComponent implements OnInit {
-  rockets : Rocket[];
+  rockets: Rocket[];
   constructor(private spacexApi: SpacexApiService,
     private router: Router) {
-    this.spacexApi.getAllRockets().subscribe(data=> this.rockets = data);
+    this.spacexApi.getAllRockets().subscribe(data => this.rockets = data);
    }
 
   ngOnInit() {
 
   }
 
-  goToRocketDetails(rocketId: string){
+  goToRocketDetails(rocketId: string) {
     this.router.navigate(['rockets/' + rocketId]);
   }
 }
