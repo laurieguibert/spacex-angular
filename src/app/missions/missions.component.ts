@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SpacexApiService } from 'src/app/services/spacex-api.service';
-import { LaunchEndpoints } from 'src/app/services/LaunchEndpoint';
+import { SpacexApiService } from 'src/app/Services/spacex-api.service';
+import { LaunchEndpoints } from 'src/app/Services/LaunchEndpoint';
 
 @Component({
   selector: 'app-missions',
