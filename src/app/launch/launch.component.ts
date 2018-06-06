@@ -11,5 +11,4 @@ export class LaunchComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

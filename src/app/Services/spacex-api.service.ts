@@ -44,6 +44,9 @@ export class SpacexApiService {
   getAllLaunches(): Observable<Launch[]> {
     return this.GetMissions<Launch[]>(LaunchEndpoints.All);
   }
+  getLaunchDetails(flight_number: number) {
+    return this.GetMissions<Launch>(LaunchEndpoints.All, {flight_number: flight_number});
+  }
   /**
    * Rockets endpoint
    */
