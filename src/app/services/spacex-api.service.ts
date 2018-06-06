@@ -32,6 +32,22 @@ export class SpacexApiService {
     return this.GetMissions<Launch[]>(LaunchEndpoints.All);
   }
 
+  getAllRockets(): Observable<Rocket[]> {
+    return this.GetRockets<Rocket[]>();
+  }
+
+  getRocket(rocketId : string) : Observable<Rocket> {
+    return this.GetRockets<Rocket>(rocketId);
+  }
+
+  getAllCapsules(): Observable<Capsule[]> {
+    return this.GetCapsules<Capsule[]>();
+  }
+
+  getCapsule(capsuleId : string) : Observable<Capsule> {
+    return this.GetCapsules<Capsule>(capsuleId);
+  }
+
   private GetMissions<T>(path: LaunchEndpoints = null, params: any = null): Observable<T> {
     let endpoint = `${this.baseUrl}/launches`;
     if(path !== null){
@@ -48,18 +64,22 @@ export class SpacexApiService {
     );
   }
 
-  getAllRockets(): Observable<Rocket[]> {
-    return this.GetRockets<Rocket[]>();
-  }
-
-  getRocket(rocketId : string) : Observable<Rocket> {
-    return this.GetRockets<Rocket>(rocketId);
-  }
-
   private GetRockets<T>(rocketId : string = null) : Observable<T>{
     let endpoint = `${this.baseUrl}/rockets`;
     if(rocketId !== null){
       endpoint = `${this.baseUrl}/rockets/${rocketId}`;
+    }
+
+    return this.httpClient.get<T>(endpoint)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  private GetCapsules<T>(capsuleId : string = null) : Observable<T>{
+    let endpoint = `${this.baseUrl}/capsules`;
+    if(capsuleId !== null){
+      endpoint = `${this.baseUrl}/capsules/${capsuleId}`;
     }
 
     return this.httpClient.get<T>(endpoint)

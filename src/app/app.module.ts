@@ -13,6 +13,7 @@ import { LaunchComponent } from './launch/launch.component';
 import { CompanyInfoComponent } from './company-info/company-info.component';
 import { CompanyHistoryComponent } from './company-history/company-history.component';
 import { RocketComponent } from './rocket/rocket.component';
+import { CapsuleComponent } from './capsule/capsule.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RocketComponent } from './rocket/rocket.component';
     CompanyInfoComponent,
     LaunchComponent,
     CompanyHistoryComponent,
-    RocketComponent
+    RocketComponent,
+    CapsuleComponent
   ],
   imports: [
     BrowserModule,
