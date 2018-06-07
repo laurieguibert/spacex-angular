@@ -24,6 +24,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { MissionsDetailsComponent } from './missions-details/missions-details.component';
 import { AgmCoreModule } from '@agm/core';
 import { LaunchpadComponent } from './launchpad/launchpad.component';
+import { TimerComponent } from './timer/timer.component';
+import { CountdownTimerModule } from 'ngx-countdown-timer';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { LaunchpadComponent } from './launchpad/launchpad.component';
     TabComponent,
     AboutComponent,
     MissionsDetailsComponent,
-    LaunchpadComponent
+    LaunchpadComponent,
+    TimerComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ import { LaunchpadComponent } from './launchpad/launchpad.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAa2wNa1V87VMlzkV65KevyZJfmMyIEiAA'
     })
+    CountdownTimerModule.forRoot(),
   ],
   providers: [],
   bootstrap: [ AppComponent ],
