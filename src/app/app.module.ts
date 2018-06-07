@@ -12,13 +12,15 @@ import { RocketComponent } from './pages/rocket/rocket.component';
 import { MissionsComponent } from './missions/missions.component';
 import { LaunchComponent } from './launch/launch.component';
 import { CompanyInfoComponent } from './pages/company-info/company-info.component';
-import { CompanyHistoryComponent } from './company-history/company-history.component';
+import { CompanyHistoryComponent } from './pages/company-history/company-history.component';
 
 import { CapsuleComponent } from './capsule/capsule.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RocketListComponent } from './rocket-list/rocket-list.component';
 import { CardComponent } from './card/card.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { TabComponent } from './tab/tab.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { CarouselComponent } from './carousel/carousel.component';
     NavigationComponent,
     RocketListComponent,
     CardComponent,
-    CarouselComponent
+    CarouselComponent,
+    TabComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

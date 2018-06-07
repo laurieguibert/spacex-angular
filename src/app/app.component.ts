@@ -22,7 +22,7 @@ export class AppComponent {
     },
     {
       name: 'About SpaceX',
-      href: 'companyInfo',
+      href: 'about',
       isActive: false
     }
   ];
