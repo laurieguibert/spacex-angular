@@ -4,6 +4,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { HomeComponent } from './pages/home/home.component';
@@ -44,6 +45,7 @@ import { AboutComponent } from './pages/about/about.component';
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    NgHttpLoaderModule,
     AngularFontAwesomeModule,
   ],
   providers: [],
