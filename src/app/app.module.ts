@@ -25,6 +25,8 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { TabComponent } from './tab/tab.component';
 import { AboutComponent } from './pages/about/about.component';
 import { MissionsDetailsComponent } from './missions-details/missions-details.component';
+import { TimerComponent } from './timer/timer.component';
+import { CountdownTimerModule } from 'ngx-countdown-timer';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { MissionsDetailsComponent } from './missions-details/missions-details.co
     CarouselComponent,
     TabComponent,
     AboutComponent,
-    MissionsDetailsComponent
+    MissionsDetailsComponent,
+    TimerComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { MissionsDetailsComponent } from './missions-details/missions-details.co
     NgHttpLoaderModule,
     AngularFontAwesomeModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    CountdownTimerModule.forRoot(),
   ],
   providers: [],
   bootstrap: [ AppComponent ],
