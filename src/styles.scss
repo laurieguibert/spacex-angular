@@ -33,4 +33,15 @@ body {
   }
 }
 
+.carousel-indicators {
+  li {
+    background-color: #999;
+    opacity: .2;
+    &.active {
+      background-color: #999;
+      opacity: .8;
+    }
+  }
+}
+
 
