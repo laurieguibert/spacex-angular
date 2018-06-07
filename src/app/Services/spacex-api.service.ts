@@ -71,14 +71,18 @@ export class SpacexApiService {
    * @param params
    */
   private GetMissions<T>(path: LaunchEndpoints = null, params: any = null): Observable<T> {
+    console.log(params);
     let endpoint = `${this.baseUrl}/launches`;
     if (path !== null) {
       endpoint = `${this.baseUrl}/launches/${LaunchEndpoints[path]}`;
     }
     let httpParams = new HttpParams();
-    Object.keys(params).forEach(function(key) {
-      httpParams = httpParams.append(key, params[key]);
-    });
+    if(params){
+      Object.keys(params).forEach(function(key) {
+        httpParams = httpParams.append(key, params[key]);
+      });
+    }
+    
     return this.httpClient.get<T>(endpoint, {params: httpParams})
       .pipe(
         catchError(this.handleError)

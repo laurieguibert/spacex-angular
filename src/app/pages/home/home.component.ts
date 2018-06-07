@@ -10,12 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 
 export class HomeComponent implements OnInit {
   launch: Launch;
+  nextLaunch : Launch;
 
   constructor(private spacexApi: SpacexApiService,
     private route: ActivatedRoute) {
-    this.spacexApi.getLaunchDetails(63).subscribe(data =>
-    this.launch = data);
+    this.spacexApi.getLaunchDetails(63).subscribe(data => this.launch = data);
+    this.spacexApi.getNextLaunch().subscribe(data => this.nextLaunch = data);
   }
+
   ngOnInit() {
   }
 }
