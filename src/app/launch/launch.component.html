@@ -7,7 +7,7 @@
   </p>
   <div [ngSwitch]="launch.launch_success">
     <mat-chip-list>
-      <mat-chip *ngSwitchCase="true" class="success-chip" selected="true">success</mat-chip>
+      <mat-chip *ngSwitchCase="true" class="success-chip" selected="true" color="accent">success</mat-chip>
       <mat-chip *ngSwitchCase="false" class="fail-chip" color="primary" selected="true">fail</mat-chip>
     </mat-chip-list>
   </div> 
