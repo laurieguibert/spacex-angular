@@ -77,12 +77,11 @@ export class SpacexApiService {
       endpoint = `${this.baseUrl}/launches/${LaunchEndpoints[path]}`;
     }
     let httpParams = new HttpParams();
-    if(params){
+    if (params) {
       Object.keys(params).forEach(function(key) {
         httpParams = httpParams.append(key, params[key]);
       });
     }
-    
     return this.httpClient.get<T>(endpoint, {params: httpParams})
       .pipe(
         catchError(this.handleError)

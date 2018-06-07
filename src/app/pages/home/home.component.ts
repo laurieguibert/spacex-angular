@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class HomeComponent implements OnInit {
   launch: Launch;
-  nextLaunch : Launch;
+  nextLaunch: Launch;
 
   constructor(private spacexApi: SpacexApiService,
     private route: ActivatedRoute) {
