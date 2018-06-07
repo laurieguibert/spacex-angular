@@ -24,7 +24,8 @@ export class AppComponent {
       name: 'Missions',
       href: 'missions',
       isActive: false
-    },{
+    },
+    {
       name: 'About SpaceX',
       href: 'about',
       isActive: false

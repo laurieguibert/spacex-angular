@@ -58,7 +58,7 @@ import { CountdownTimerModule } from 'ngx-countdown-timer';
     MaterialModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAa2wNa1V87VMlzkV65KevyZJfmMyIEiAA'
-    })
+    }),
     CountdownTimerModule.forRoot(),
   ],
   providers: [],
