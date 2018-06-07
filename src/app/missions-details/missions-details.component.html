@@ -1,15 +1,76 @@
-<mat-accordion>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Data preview
-      </mat-panel-title>
-      <mat-panel-description>
-        Json
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <pre>
-       {{launch | json}}
-    </pre>
-  </mat-expansion-panel>
-</mat-accordion>
+<mat-card *ngIf="launch">
+  <mat-card-content>
+    <mat-tab-group >
+      <mat-tab label="General">
+        <ng-template mat-tab-label>
+          <span matBadgeColor="accent">General</span>
+        </ng-template>
+        <mat-nav-list>
+            <mat-list>
+                <mat-list-item> <b>Mission name </b>: {{launch[0].mission_name}} </mat-list-item>
+                <mat-list-item> <b>Launch date </b>: {{launch[0].launch_date_local|date:'dd/MM/yyyy'}} </mat-list-item>
+                <mat-list-item> <b>Flight number </b>: {{launch[0].flight_number}} </mat-list-item>
+            </mat-list>
+        </mat-nav-list>
+      </mat-tab>
+      <mat-tab label="Rocket">
+        <ng-template mat-tab-label>
+          <span matBadgeColor="accent">Rocket</span>
+        </ng-template>
+        <mat-nav-list>
+            <span><h3>{{launch[0].rocket.rocket_name}} Type {{launch[0].rocket.rocket_type}}</h3></span>
+            <div class="col-md-6">
+              <h5>First stage</h5>
+              <div class="stages">
+                  <p>Core serial : {{launch[0].rocket.first_stage.cores[0].core_serial}}</p>
+                  <p>Flight number : {{launch[0].rocket.first_stage.cores[0].flight}}</p>
+                  <p>Block number : {{launch[0].rocket.first_stage.cores[0].block}}</p>
+                  <div [ngSwitch]="launch[0].rocket.first_stage.cores[0].reused">
+                      <mat-chip-list>
+                        <mat-chip *ngSwitchCase="true" class="fail-chip" color="primary" selected="true">Reused</mat-chip>
+                        <mat-chip *ngSwitchCase="false" class="fail-chip" color="accent" selected="true">Not reused</mat-chip>
+                      </mat-chip-list>
+                  </div> 
+                  <div [ngSwitch]="launch[0].rocket.first_stage.cores[0].land_success">
+                      <mat-chip-list>
+                        <mat-chip *ngSwitchCase="true" class="fail-chip" color="green" selected="true">Land success</mat-chip>
+                      </mat-chip-list>
+                  </div>
+                  <br>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h5>Second stage</h5>
+              <div class="stages">
+                  <p>Core serial : {{launch[0].rocket.second_stage.payloads[0].payload_id}}</p>
+                  <p>Flight number : {{launch[0].rocket.second_stage.payloads[0].customers[0]}}</p>
+                  <p>Block number : {{launch[0].rocket.second_stage.payloads[0].payload_type}}</p>
+                  <p>Block number : {{launch[0].rocket.second_stage.payloads[0].payload_mass_kg}}</p>
+                  <div [ngSwitch]="launch[0].rocket.second_stage.payloads[0].reused">
+                      <mat-chip-list>
+                        <mat-chip *ngSwitchCase="true" class="fail-chip" color="primary" selected="true">Reused</mat-chip>
+                        <mat-chip *ngSwitchCase="false" class="fail-chip" color="accent" selected="true">Not reused</mat-chip>
+                      </mat-chip-list>
+                  </div>
+              </div>
+            </div>
+          </mat-nav-list>
+      </mat-tab>
+      <mat-tab label="launchSite" active>
+          <ng-template mat-tab-label>
+            <span matBadgeColor="accent">Launch site</span>
+          </ng-template>
+          <mat-nav-list>
+            <div *ngIf="launchpad">
+              <h3>{{launchpad.full_name}}</h3>
+              <h6>{{launchpad.details}}</h6>
+              <h6>Address : {{launchpad.location.name}}, {{launchpad.location.region}}</h6>
+              <agm-map [latitude]="launchpad.location.latitude" [longitude]="launchpad.location.longitude">
+                  <agm-marker [latitude]="launchpad.location.latitude" [longitude]="launchpad.location.longitude"></agm-marker>
+              </agm-map>
+            </div>
+          </mat-nav-list>
+        </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
