@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 import { HomeComponent } from './pages/home/home.component';
 import { RocketComponent } from './pages/rocket/rocket.component';
@@ -22,6 +24,7 @@ import { CardComponent } from './card/card.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { TabComponent } from './tab/tab.component';
 import { AboutComponent } from './pages/about/about.component';
+import { MissionsDetailsComponent } from './missions-details/missions-details.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { AboutComponent } from './pages/about/about.component';
     CardComponent,
     CarouselComponent,
     TabComponent,
-    AboutComponent
+    AboutComponent,
+    MissionsDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +51,8 @@ import { AboutComponent } from './pages/about/about.component';
     HttpClientModule,
     NgHttpLoaderModule,
     AngularFontAwesomeModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [ AppComponent ],

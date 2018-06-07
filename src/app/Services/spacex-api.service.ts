@@ -71,7 +71,6 @@ export class SpacexApiService {
    * @param params
    */
   private GetMissions<T>(path: LaunchEndpoints = null, params: any = null): Observable<T> {
-    console.log(params);
     let endpoint = `${this.baseUrl}/launches`;
     if (path !== null) {
       endpoint = `${this.baseUrl}/launches/${LaunchEndpoints[path]}`;

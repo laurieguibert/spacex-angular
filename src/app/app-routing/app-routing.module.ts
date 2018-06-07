@@ -8,9 +8,11 @@ import { RocketComponent } from '../pages/rocket/rocket.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { AboutComponent } from 'src/app/pages/about/about.component';
 import { RocketListComponent } from '../rocket-list/rocket-list.component';
+import { MissionsDetailsComponent } from 'src/app/missions-details/missions-details.component';
 
 const appRoutes: Routes = [
   { path: 'missions', component: MissionsComponent },
+  { path: 'missions/:flight_number', component: MissionsDetailsComponent },
   { path: 'companyInfo', component: CompanyInfoComponent },
   { path: 'companyHistory', component: CompanyHistoryComponent },
   { path: 'rockets', component: RocketListComponent },

@@ -1,12 +1,15 @@
-<mat-card>
-  <mat-card-header>
-    <img mat-card-avatar src="{{launch.links.mission_patch_small}}" />
-    <mat-card-title>{{launch.mission_name}}</mat-card-title>
-    <mat-card-subtitle>{{launch.launch_date_utc | date:'yyyy-MM-dd HH:mm'}}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      {{launch.details}}
-    </p>
-  </mat-card-content>
-</mat-card>
+<mat-list-item (click)="navigateToLaunchDetails()">
+  <img matListAvatar *ngIf="launch.links.mission_patch_small" src="{{launch.links.mission_patch_small}}" />
+  <img matListAvatar *ngIf="!launch.links.mission_patch_small" src="../../assets/default.png" />
+  <h3 matLine> {{launch.mission_name}} ({{launch.launch_date_utc|date:'dd/MM/yyyy'}})</h3>
+  <p matLine>
+    <span> {{launch.launch_site?.site_name }} </span>
+  </p>
+  <div [ngSwitch]="launch.launch_success">
+    <mat-chip-list>
+      <mat-chip *ngSwitchCase="true" class="success-chip" selected="true">success</mat-chip>
+      <mat-chip *ngSwitchCase="false" class="fail-chip" color="primary" selected="true">fail</mat-chip>
+    </mat-chip-list>
+  </div> 
+  <mat-divider></mat-divider>
+</mat-list-item>
