@@ -8,7 +8,7 @@ import { SpacexApiService } from '../Services/spacex-api.service';
 })
 export class CompanyHistoryComponent implements OnInit {
   companyHistory: CompanyHistory;
-  items = '';
+
   constructor(private spacexApi: SpacexApiService) {
     this.spacexApi.getCompanyHistory().subscribe(data => {
       this.companyHistory = data;

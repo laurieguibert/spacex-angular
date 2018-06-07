@@ -1,5 +1,6 @@
 <mdb-carousel [isControls]="true" [animation]="'slide'">
-  <mdb-slide *ngFor="let item of items;">
+  <mdb-slide *ngFor="let item of items">
     <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg" alt="First slide">
+    {{item.title}}
   </mdb-slide>
 </mdb-carousel>
