@@ -65,6 +65,17 @@ export class SpacexApiService {
   getCapsule(capsuleId: string): Observable<Capsule> {
     return this.GetCapsules<Capsule>(capsuleId);
   }
+
+  /**
+   * Launchpads endpoint
+   */
+  getAllLaunchpads(): Observable<Launchpad[]> {
+    return this.GetLaunchpad<Launchpad[]>();
+  }
+  getLaunchpad(launchpadId: string): Observable<Launchpad> {
+    return this.GetLaunchpad<Launchpad>(launchpadId);
+  }
+
   /**
    * Generic function for launches
    * @param path
@@ -114,6 +125,22 @@ export class SpacexApiService {
         catchError(this.handleError)
       );
   }
+
+  /**
+   * Generic function for launchpad
+   * @param launchpadId
+   */
+  private GetLaunchpad<T>(launchpadId: string = null): Observable<T> {
+    let endpoint = `${this.baseUrl}/launchpads`;
+    if (launchpadId !== null) {
+      endpoint = `${this.baseUrl}/launchpads/${launchpadId}`;
+    }
+    return this.httpClient.get<T>(endpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
