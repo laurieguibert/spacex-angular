@@ -21,21 +21,8 @@ export class AppComponent {
       isActive: false
     },
     {
-      name: 'Dragon',
-      href: 'home',
-      action: 'goToRocketDetails(1)',
-      isActive: false
-    },
-    {
-      name: 'Updates',
-      href: 'home',
-      action: 'goToRocketDetails(1)',
-      isActive: false
-    },
-    {
       name: 'About SpaceX',
-      href: 'home',
-      action: 'goToRocketDetails(1)',
+      href: 'companyInfo',
       isActive: false
     }
   ];

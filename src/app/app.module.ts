@@ -11,13 +11,14 @@ import { RocketComponent } from './pages/rocket/rocket.component';
 
 import { MissionsComponent } from './missions/missions.component';
 import { LaunchComponent } from './launch/launch.component';
-import { CompanyInfoComponent } from './company-info/company-info.component';
+import { CompanyInfoComponent } from './pages/company-info/company-info.component';
 import { CompanyHistoryComponent } from './company-history/company-history.component';
 
 import { CapsuleComponent } from './capsule/capsule.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RocketListComponent } from './rocket-list/rocket-list.component';
 import { CardComponent } from './card/card.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CardComponent } from './card/card.component';
     CapsuleComponent,
     NavigationComponent,
     RocketListComponent,
-    CardComponent
+    CardComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

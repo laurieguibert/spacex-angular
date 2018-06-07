@@ -1,0 +1,23 @@
+<p>{{companyInfo.summary}}</p>
+<p>
+  Quick facts about {{companyInfo.name}} :
+  Founded = {{companyInfo.founded}},
+  vehicules = {{companyInfo.vehicles}},
+  employees = {{companyInfo.employees}},
+  nb launch sites = {{companyInfo.launch_sites}},
+  nb_test_site = {{companyInfo.test_sites}}
+</p>
+<p>
+  Equipe :
+  Founder, CEO and CTO : {{companyInfo.founder}},
+  COO : {{companyInfo.coo}},
+  CTO propulsion : {{companyInfo.cto_propulsion}}
+</p>
+<p>
+  Headquarters' address : {{companyInfo.headquarters.address}}, {{companyInfo.headquarters.city}}, {{companyInfo.headquarters.state}}
+</p>
+
+{{companyInfo|json}}
+
+
+<app-carousel></app-carousel>
