@@ -1,0 +1,20 @@
+<ul class="nav nav-tabs" id="tablist" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#infos" role="tab" aria-controls="infos">Informations</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#history" role="tab" aria-controls="history">History</a>
+    </li>
+  </ul>
+  
+  <div class="tab-content">
+    <div class="tab-pane active" id="infos" role="tabpanel"><app-company-info></app-company-info></div>
+    <div class="tab-pane" id="history" role="tabpanel"><app-company-history></app-company-history></div>
+  </div>
+  
+  <script>
+    $('#tablist a').on('click', function (e) {
+      e.preventDefault()
+      $(this).tab('show');
+    })
+  </script>

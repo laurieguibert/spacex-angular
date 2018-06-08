@@ -1,0 +1,17 @@
+.navbar-nav {
+  li {
+    a {
+      font-size: 13px;
+      padding: 0;
+      margin: 8px 8px 0 8px !important;
+      border-bottom: 2px solid transparent;
+      &:hover {
+        color: #fff;
+        border-color: #ccac55;
+      }
+      &.active {
+        color: #ccac55;
+      }
+    }
+  }
+}

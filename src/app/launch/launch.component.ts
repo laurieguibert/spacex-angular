@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-launch',
@@ -7,9 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LaunchComponent implements OnInit {
   @Input() launch: Launch;
-  constructor() { }
+  constructor(private router: Router) { }
+
+  navigateToLaunchDetails() {
+    this.router.navigate([`missions/${this.launch.flight_number}`]);
+  }
 
   ngOnInit() {
   }
-
 }

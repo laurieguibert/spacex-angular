@@ -44,6 +44,9 @@ export class SpacexApiService {
   getAllLaunches(): Observable<Launch[]> {
     return this.GetMissions<Launch[]>(LaunchEndpoints.All);
   }
+  getLaunchDetails(flight_number: number) {
+    return this.GetMissions<Launch>(LaunchEndpoints.All, {flight_number: flight_number});
+  }
   /**
    * Rockets endpoint
    */
@@ -62,6 +65,17 @@ export class SpacexApiService {
   getCapsule(capsuleId: string): Observable<Capsule> {
     return this.GetCapsules<Capsule>(capsuleId);
   }
+
+  /**
+   * Launchpads endpoint
+   */
+  getAllLaunchpads(): Observable<Launchpad[]> {
+    return this.GetLaunchpad<Launchpad[]>();
+  }
+  getLaunchpad(launchpadId: string): Observable<Launchpad> {
+    return this.GetLaunchpad<Launchpad>(launchpadId);
+  }
+
   /**
    * Generic function for launches
    * @param path
@@ -73,9 +87,11 @@ export class SpacexApiService {
       endpoint = `${this.baseUrl}/launches/${LaunchEndpoints[path]}`;
     }
     let httpParams = new HttpParams();
-    Object.keys(params).forEach(function(key) {
-      httpParams = httpParams.append(key, params[key]);
-    });
+    if (params) {
+      Object.keys(params).forEach(function(key) {
+        httpParams = httpParams.append(key, params[key]);
+      });
+    }
     return this.httpClient.get<T>(endpoint, {params: httpParams})
       .pipe(
         catchError(this.handleError)
@@ -109,6 +125,22 @@ export class SpacexApiService {
         catchError(this.handleError)
       );
   }
+
+  /**
+   * Generic function for launchpad
+   * @param launchpadId
+   */
+  private GetLaunchpad<T>(launchpadId: string = null): Observable<T> {
+    let endpoint = `${this.baseUrl}/launchpads`;
+    if (launchpadId !== null) {
+      endpoint = `${this.baseUrl}/launchpads/${launchpadId}`;
+    }
+    return this.httpClient.get<T>(endpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

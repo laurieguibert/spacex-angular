@@ -1,0 +1,191 @@
+<div id="app-rocket">
+  <section id="rocket-video" class="clearfix">
+    <div class="container">
+      <p>
+        falcon 9 & dragon to return astronauts to space
+      </p>
+    </div>
+  </section>
+  <section id="rocket-description" class="clearfix">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>
+            {{rocket.name}}
+          </h1>
+          <p>
+            {{rocket.description}}
+          </p>
+        </div>
+        <div class="col-md-4">
+          <div id="rocket-navigation">
+            <img src="https://image.ibb.co/ddN0f8/mini_falcon2.png" alt="mini_falcon2">
+            <app-navigation [links]="links"></app-navigation>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="rocket-payload" class="clearfix">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>first stage</h2>
+          <p>
+            Falcon 9’s first stage incorporates nine Merlin engines and aluminum-lithium alloy tanks containing liquid oxygen and rocket-grade kerosene (RP-1) propellant. After ignition, a hold-before-release system ensures that all engines are verified for full-thrust performance before the rocket is released for flight. Then, with thrust greater than five 747s at full power, the Merlin engines launch the rocket to space. Unlike airplanes, a rocket's thrust actually increases with altitude; Falcon 9 generates more than 1.7 million pounds of thrust at sea level but gets up to over 1.8 million pounds of thrust in the vacuum of space. The first stage engines are gradually throttled near the end of first-stage flight to limit launch vehicle acceleration as the rocket’s mass decreases with the burning of fuel.
+          </p>
+          <div class="data">
+            <div class="row">
+              <div class="col-md-3">
+                <h3>engines</h3>
+                <p>
+                  {{rocket.first_stage.engines}}
+                </p>
+              </div>
+              <div class="col-md-9">
+                <h3>burn time</h3>
+                <p>
+                  {{rocket.first_stage.burn_time_sec}}
+                  <span class="unit">sec</span>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h3>thrust at sea level</h3>
+                <p>
+                  {{rocket.first_stage.thrust_sea_level.kN}}
+                  <span class="unit">kN</span>
+                  <span class="lbf">
+                    {{rocket.first_stage.thrust_sea_level.lbf}}
+                    <span class="unit">lbf</span>
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h3>thrust in vacuum</h3>
+                <p>
+                  {{rocket.first_stage.thrust_vacuum.kN}}
+                  <span class="unit">kN</span>
+                  <span class="lbf">
+                    {{rocket.first_stage.thrust_vacuum.lbf}}
+                    <span class="unit">lbf</span>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h2>second stage</h2>
+          <p>
+            The second stage, powered by a single Merlin vacuum engine, delivers Falcon 9’s payload to the desired orbit.
+            The second stage engine ignites a few seconds after stage separation, and can be restarted multiple times to
+            place multiple payloads into different orbits. For maximum reliability, the second stage has redundant igniter
+            systems. Like the first stage, the second stage is made from a high-strength aluminum-lithium alloy.
+          </p>
+          <div class="data">
+            <div class="row">
+              <div class="col-md-3">
+                <h3>engines</h3>
+                <p>
+                  {{rocket.second_stage.engines}}
+                </p>
+              </div>
+              <div class="col-md-9">
+                <h3>burn time</h3>
+                <p>
+                  {{rocket.second_stage.burn_time_sec}}
+                  <span class="unit">sec</span>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h3>thrust</h3>
+                <p>
+                  {{rocket.second_stage.thrust.kN}}
+                  <span class="unit">kN</span>
+                  <span class="lbf">
+                  {{rocket.second_stage.thrust.lbf}} lbf
+                </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <article id="rocket-technical-overview">
+        <h4>
+          technical overview
+        </h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-6">
+                <h5>
+                  height
+                </h5>
+                <p>
+                  {{rocket.height.meters}} m
+                  <span class="ft">{{rocket.height.feet}} ft</span>
+                </p>
+              </div>
+              <div class="col-md-6">
+                <h5>
+                  mass
+                </h5>
+                <p>
+                  {{rocket.mass.kg}} kg
+                  <span class="ft">{{rocket.mass.lb}} lb</span>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <h5>
+                  diameter
+                </h5>
+                <p>
+                  {{rocket.diameter.meters}} m
+                  <span class="ft">{{rocket.diameter.feet}} ft</span>
+                </p>
+              </div>
+              <div class="col-md-6">
+                <h5>
+                  stages
+                </h5>
+                <p>
+                  {{rocket.stages}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-6" *ngFor="let payload of rocket.payload_weights;">
+                <h5>
+                  payload to {{payload.id}}
+                </h5>
+                <p>
+                  {{payload.kg}} kg
+                  <span class="ft">{{payload.lb}} lb</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="rocket-milestones">
+    <div class="container">
+      <h2>{{rocket.name}} milestones</h2>
+      <article>
+        <app-card [items]="items"></app-card>
+      </article>
+    </div>
+  </section>
+</div>

@@ -1,7 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  padding-top: 56px;
+}
 
 #header {
   .navbar {
     background-color: #181c1f;
   }
+}
+
+#rocket-navigation {
+  position: relative;
+  .navbar-nav {
+    li {
+      a {
+        background-color: #21272b;
+        color: #ccc;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 8px 0 !important;
+        &:hover {
+          border-color: rgba(255, 255, 255, .5) !important;
+        }
+      }
+    }
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 25px;
+  }
+}
+
+.carousel-indicators {
+  li {
+    background-color: #999;
+    opacity: .2;
+    &.active {
+      background-color: #999;
+      opacity: .8;
+    }
+  }
+}
+
+agm-map {
+  height: 400px;
+}
+
+.stages {
+  margin-left: 30px;
 }

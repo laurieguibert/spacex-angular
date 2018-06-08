@@ -1,0 +1,15 @@
+.card {
+  border-radius: 0;
+  .card-body {
+    .card-title {
+      text-transform: uppercase;
+      color: #3a3a3a;
+      font-size: 28px;
+      margin-bottom: 0;
+    }
+    .card-date {
+      color: #666;
+      font-size: 12px;
+    }
+  }
+}

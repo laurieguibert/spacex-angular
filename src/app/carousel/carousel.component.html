@@ -1,0 +1,16 @@
+<mdb-carousel [isControls]="true" [animation]="'slide'">
+  <mdb-slide *ngFor="let item of items">
+    <div class="carousel-body">
+      <p class="carousel-date">
+        {{item.event_date_utc | date: 'MMMM yyyy'}}
+      </p>
+      <h2>
+        {{item.title}}
+      </h2>
+      <p class="carousel-details">
+        {{item.details}}
+        <a href="{{item.links.article}}" target="_blank" class="btn btn-primary">read more</a>
+      </p>
+    </div>
+  </mdb-slide>
+</mdb-carousel>

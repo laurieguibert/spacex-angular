@@ -1,0 +1,21 @@
+.carousel-body {
+  background-color: #fff;
+  width: 100%;
+  padding: 30px 25px;
+  .carousel-date {
+    color: #666;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  h2 {
+    color: #3a3a3a;
+    text-transform: uppercase;
+    font-size: 32px;
+  }
+  .carousel-details {
+    color: #4b5256;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
